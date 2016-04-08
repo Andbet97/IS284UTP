@@ -3,34 +3,14 @@
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /*variables globales*/
 
+#define M 10
+
 /*funciones prototipo*/
 
-void alumno_nuevo (char *v, int n, char *a)
-{
-	int parada;
-	int inicio=(n-1)*5;
-	for (parada=n*5; inicio<parada; inicio++){
-		for (int i=0; i<5; i++){
-			a[i]=getchar();
-			if (a[i]== '\0')
-			break;
-		}
-		v[inicio]=a[inicio];
-	}
-}
 
-void mostrar_vector (char *c, int n)
-{
-	int parada;
-	int inicio=(n-1)*5;
-	for (parada=n*5; inicio<parada; inicio++){
-		printf ("%c", c[inicio]);
-	}
-}
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 /*----------------------------------------------------MENU-----------------------------------------------------------*/
@@ -52,7 +32,7 @@ int main ()
 {
 	int opc=-1;
 	int n=0; /*número de estudiantes*/
-	char V[n*5]; 
+	char V[M*5]; 
 	char aux[5];
 	//mostrar_lista ()
 	do {
@@ -63,8 +43,6 @@ int main ()
         switch (opc) {
         	case 1:{
         		n++;
-        		alumno_nuevo (V, n, aux);
-        		mostrar_vector (aux, n);
         		getch ();
 				break;
 			}
